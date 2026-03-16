@@ -9,6 +9,9 @@ import Home from './Component/Home.jsx';
 import AddCoffee from './Component/AddCoffee.jsx';
 import UpdateCoffee from './Component/UpdateCoffee.jsx';
 import CoffeeDetails from './Component/CoffeeDetails.jsx';
+import SignUp from './Component/SignUp.jsx';
+import SignIn from './Component/SignIn.jsx';
+import AuthProvider from './Component/Context/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -36,11 +39,22 @@ const router = createBrowserRouter([
       Component:UpdateCoffee
    
     },
+    {
+      path:"signUp",
+      Component:SignUp
+    },
+    {
+      path:"signIn",
+      Component:SignIn
+    }
    ]
   },
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <RouterProvider router={router} />,
+  
+   <AuthProvider>
+    <RouterProvider router={router} />,
+   </AuthProvider>
   </StrictMode>,
 )

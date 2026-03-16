@@ -28,7 +28,7 @@ const CoffeeCard = ({coffee,coffees,setCoffees}) => {
       text: "Your file has been deleted.",
       icon: "success"
     });
-    const remainingCoffees=coffees.filter(coff=>coff._id!==_id)
+    const remainingCoffees=coffees.filter(coff=>coff._id !== _id)
     setCoffees(remainingCoffees)
         }
 
